@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../App.css";
 import image1 from "../assets/images/WhatsApp Image .jpg";
+import jsPDF from "jspdf";
 
 function Hero() {
   useEffect(() => {
@@ -62,6 +62,117 @@ function Hero() {
     };
   }, []);
 
+  // ------------------- DOWNLOAD CV FUNCTION -------------------
+  const downloadCV = () => {
+    const doc = new jsPDF();
+
+    // Header
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(28);
+    doc.setTextColor("#7a6eff");
+    doc.text("Ugochi John", 20, 30);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(16);
+    doc.setTextColor("#333333");
+    doc.text("Frontend Developer", 20, 40);
+
+    doc.setDrawColor("#7a6eff");
+    doc.setLineWidth(1);
+    doc.line(20, 45, 190, 45);
+
+    // Contact
+    doc.setFontSize(12);
+    doc.text("Email: johnugochi596@gmail.com", 20, 55);
+    doc.text("Phone: +2349067790938", 20, 62);
+    doc.text("Location: Aba, Abia State, Nigeria", 20, 69);
+
+    doc.text("GitHub: https://github.com/codegeckoug", 20, 83);
+    doc.text(
+      "Twitter: https://x.com/ugochiieth?t=I-Hi6UxlS7rDgfrgwskGHA&s=09",
+      20,
+      90
+    );
+
+    // Professional Summary
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor("#7a6eff");
+    doc.text("Professional Summary", 20, 102);
+
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor("#333333");
+    doc.text(
+      "Creative and detail-oriented Frontend Developer with strong expertise in building responsive, modern web applications. " +
+        "Experienced in React, JavaScript, CSS, and modern frontend tooling. " +
+        "Passionate about delivering clean, user-friendly interfaces, optimizing performance, and continuously learning new technologies. " +
+        "Able to collaborate with designers and backend developers to implement complete web solutions.",
+      20,
+      108,
+      { maxWidth: 170 }
+    );
+
+    // Technical Skills
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor("#7a6eff");
+    doc.text("Technical Skills", 20, 135);
+
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor("#333333");
+    doc.text(
+      "• HTML5, CSS3, JavaScript ES6+\n" +
+        "• React.js, Redux, React Router\n" +
+        "• Responsive & Mobile-first Design\n" +
+        "• Git, GitHub, Version Control\n" +
+        "• REST APIs, GraphQL integration\n" +
+        "• Figma, UI/UX Basics, CSS Animations",
+      20,
+      141,
+      { lineHeightFactor: 1.2, maxWidth: 170 }
+    );
+
+    // Education & Certifications
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor("#7a6eff");
+    doc.text("Education & Certifications", 20, 180);
+
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor("#333333");
+    doc.text("Shefi.org - Student, Web Development", 20, 186);
+    doc.text(
+      "Self-taught Web Developer, continuously learning advanced frontend technologies",
+      20,
+      192,
+      { maxWidth: 170 }
+    );
+    doc.text("Certifications:", 20, 200);
+    doc.text("• Frontend Web Developer (Shefi.org)", 25, 206);
+    doc.text("• Responsive Web Design (FreeCodeCamp)", 25, 212);
+
+    // Projects
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor("#7a6eff");
+    doc.text("Featured Projects", 20, 225);
+
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor("#333333");
+    doc.text(
+      "1. DAOBase Clone – React-based clone of daobase.ai with dynamic proposals & ecosystem pages.\n" +
+        "2. Sphone Clone – Fully responsive e-commerce phone store web app.\n" +
+        "3. IP Tracker – Real-time IP & location tracker, Frontend Mentor project.\n" +
+        "4. Social Links Profile – Built with HTML & CSS Grid, responsive layout.",
+      20,
+      231,
+      { lineHeightFactor: 1.2, maxWidth: 170 }
+    );
+
+    // Footer
+    doc.setFontSize(10);
+    doc.setTextColor("#999999");
+    doc.text("Generated from my portfolio - Ugochi John", 20, 280);
+
+    doc.save("Ugochi_John_CV.pdf");
+  };
+
   return (
     <section id="hero" className="hero fade-in">
       <img src={image1} alt="Ugochi John" className="hero-image" />
@@ -76,9 +187,9 @@ function Hero() {
       <a href="#projects" className="btn">
         Explore My Work
       </a>
-      <Link to="/cv" className="btn cv-btn">
+      <button className="btn cv-btn" onClick={downloadCV}>
         Download CV
-      </Link>
+      </button>
     </section>
   );
 }

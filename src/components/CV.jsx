@@ -45,7 +45,7 @@ function CV() {
       <div className="cv-container">
         <div className="cv-card">
           <h3>Ugochi John</h3>
-          <p className="role">Frontend Developer</p>
+          <p className="role">Frontend Developer (Training)</p>
           <p>Email: johnugochi596@gmail.com</p>
           <p>Phone: +2349067790938</p>
           <p>Location: Aba, Abia State</p>
@@ -62,9 +62,23 @@ function CV() {
           <p>
             Student at Shefi.org <br />
             Self-taught Web Developer <br />
-            Featured Projects: DAOBase Clone, Sphone Clone, IP Tracker, Social
-            Links Profile
+            Featured Projects: . Daobase clone : A React-based clone of
+            daobase.ai with dynamic proposal and ecosystem pages. . Sphone Clone
+            : A modern mobile-focused website clone built with React, featuring
+            sleek animations and responsive design. . IP Tracker App : A React
+            app that tracks IP addresses and displays location details using the
+            GeoIP API and an interactive map. Built as a Frontend Mentor
+            challenge. . Social Links Profile : A clean personal profile card
+            built with HTML and CSS Grid, featuring social media links and
+            responsive design. . Landing Page Clone : A responsive landing page
+            clone built with HTML and CSS, featuring modern design elements and
+            smooth scrolling. . Equilibrium collection : A simple Ethereum
+            symbol profile created using only HTML and tailwindcss.
           </p>
+          <p>
+            ...and more projects available on my portfolio and github website.
+          </p>
+
           <button className="btn" onClick={downloadPDF}>
             Download CV
           </button>
