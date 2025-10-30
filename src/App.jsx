@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CV from "./components/CV";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -9,14 +11,26 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-      <Hero />
-      <Projects />
-      <Skills />
-      <About />
-      <Contact />
-    </div>
+      <Routes>
+        {/* Homepage */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Projects />
+              <Skills />
+              <About />
+              <Contact />
+            </>
+          }
+        />
+        {/* CV Page */}
+        <Route path="/cv" element={<CV />} />
+      </Routes>
+    </Router>
   );
 }
 

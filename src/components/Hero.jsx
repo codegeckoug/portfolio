@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 import image1 from "../assets/images/WhatsApp Image .jpg";
 
@@ -75,6 +76,9 @@ function Hero() {
       <a href="#projects" className="btn">
         Explore My Work
       </a>
+      <Link to="/cv" className="btn cv-btn">
+        Download CV
+      </Link>
     </section>
   );
 }

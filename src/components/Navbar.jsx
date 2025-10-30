@@ -20,7 +20,7 @@ function Navbar() {
         <h2 className="logo">
           <span className="logo-name">
             {" "}
-            <a href="#hero">Ugochi</a>
+            <a href="#">Ugochi</a>
           </span>
           <span className="dot">.</span>
         </h2>
